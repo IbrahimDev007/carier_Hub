@@ -5,7 +5,7 @@ const Header = () => {
     const [toggle, settToggle] = useState(false);
     const navigate=useNavigate()
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 static">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} onClick={()=>settToggle(!toggle)} className="btn btn-ghost lg:hidden">
@@ -18,8 +18,8 @@ const Header = () => {
            Statistic
           </NavLink>
         </li>
-        <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Blog</NavLink></li>
-        <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Applied Job</NavLink></li>
+        <li><NavLink to='/desc' className={({isActive})=>isActive?'texts-gradiant':''}>Desc</NavLink></li>
+        <li><NavLink to='/appliedJob' className={({isActive})=>isActive?'texts-gradiant':''}>Applied Job</NavLink></li>
         <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Blog</NavLink></li>
       </ul> }
     </div>
@@ -33,8 +33,8 @@ const Header = () => {
            Statistic
           </NavLink>
         </li>
-        <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Blog</NavLink></li>
-        <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Applied Job</NavLink></li>
+        <li><NavLink to='/desc' className={({isActive})=>isActive?'texts-gradiant':''}>Desc</NavLink></li>
+        <li><NavLink to='/appliedJob' className={({isActive})=>isActive?'texts-gradiant':''}>Applied Job</NavLink></li>
         <li><NavLink to='/blog' className={({isActive})=>isActive?'texts-gradiant':''}>Blog</NavLink></li>
     </ul>
   </div>

@@ -4,7 +4,8 @@ import HeroContent from "../HeroContent/HeroContent";
 import Jobcatagory from "../JobCatgory/Jobcatagory";
 
 const Home = () => {
-	const catagory = useLoaderData();
+	const {catagoryData,jobData
+    } = useLoaderData();
 
 	return (
 		<>
@@ -18,7 +19,7 @@ const Home = () => {
 					</p>
 				</div>
 				<div className="flex  flex-col justify-center items-center lg:px-10 lg:flex-row">
-					{catagory.map((catagory, index) => (
+					{catagoryData.map((catagory, index) => (
 						<Jobcatagory key={index} catagory={catagory} />
 					))}
 				</div>

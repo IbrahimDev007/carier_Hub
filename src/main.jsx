@@ -8,16 +8,34 @@ import {
 } from "react-router-dom";
 import Home from './Component/Home/Home';
 import ErrorPage from './Component/ErrorPage/ErrorPage';
+import customLoader from './Loder/loader';
+import JobDesc from './Component/Job/JobDesc';
+import AppliedJob from './Component/Job/AppliedJob';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element:<App/>,
     errorElement:<ErrorPage/>,
-    children:[{
+    children:[
+      {
       path: "/",
       element:<Home/>,
-      loader:()=>fetch('catagory.json'),
-    }]
+      loader:customLoader,
+    },
+      {
+      path: "/desc",
+      element:<JobDesc/>,
+      loader:customLoader,
+    },
+  
+      {
+      path: "/appliedJob",
+      element:<AppliedJob/>,
+      loader:customLoader,
+    },
+  
+  ]
   },
 ]);
 
