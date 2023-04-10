@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [toggle, settToggle] = useState(false);
+    const navigate=useNavigate()
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -18,6 +19,8 @@ const Header = () => {
           </NavLink>
         </li>
         <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Blog</NavLink></li>
+        <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Applied Job</NavLink></li>
+        <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Blog</NavLink></li>
       </ul> }
     </div>
     <Link to='/'className="btn btn-ghost normal-case text-xl">Professional-Hub</Link>
@@ -31,10 +34,12 @@ const Header = () => {
           </NavLink>
         </li>
         <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Blog</NavLink></li>
+        <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Applied Job</NavLink></li>
+        <li><NavLink to='/blog' className={({isActive})=>isActive?'text-violet-600':''}>Blog</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-primary ">Get started</a>
+    <p className="btn btn-primary bg-gradiant " onClick={()=>navigate('/job')}>Start Apply</p>
   </div>
 </div>
     );
