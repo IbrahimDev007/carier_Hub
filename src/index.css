@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-gradiant{
-    @apply bg-gradient-to-r from-indigo-500 via-indigo-500 to-violet-500
+
+
+@layer components {
+    .bg-gradiant{
+        @apply bg-gradient-to-r from-indigo-500 via-indigo-500 to-violet-500
+    }
+    .texts-gradiant{
+        @apply bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent
+    }
+
 }
