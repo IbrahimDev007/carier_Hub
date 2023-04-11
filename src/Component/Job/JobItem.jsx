@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faDollar } from "@fortawesome/free-solid-svg-icons";
+import { faDollar } from "@fortawesome/free-solid-svg-icons";
 
 const JobItem = () => {
 	return (
@@ -24,13 +24,14 @@ const JobItem = () => {
 						<span>
 							<img src="https://i.ibb.co/tMzPpHJ/Location-Icon.png" alt="" />
 						</span>
-						<span><FontAwesomeIcon  className="text-gray-600"
-                        icon={faDollar} /></span>
+						<span>
+							<FontAwesomeIcon className="text-gray-600" icon={faDollar} />
+						</span>
 						sallery
 					</p>
 				</div>
 				<div className="card-actions">
-					<button className="btn btn-primary bg-gradiant ">Watch</button>
+					<button className="btn btn-primary bg-gradiant ">View Details</button>
 				</div>
 			</div>
 		</div>

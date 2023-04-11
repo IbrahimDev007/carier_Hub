@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import HeroContent from "../HeroContent/HeroContent";
 import FetureJob from "../Job/FetureJob";
@@ -6,6 +6,7 @@ import Jobcatagory from "../JobCatgory/Jobcatagory";
 
 const Home = () => {
 	const { catagoryData, jobData } = useLoaderData();
+	const [toggle, setToggle] = useState(false);
 
 	return (
 		<>
@@ -32,13 +33,18 @@ const Home = () => {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 lg:grid-cols-2 mt-8 justify-items-center items-center">
-						{jobData.map((job) => (
-							<FetureJob key={job.id} job={job} />
-						))}
+						{toggle
+							? jobData
+									.slice(0, 4)
+									.map((job) => <FetureJob key={job.id} job={job} />)
+							: jobData.map((job) => <FetureJob key={job.id} job={job} />)}
 					</div>
 					<div className="flex justify-center">
-						<button className="btn btn-primary bg-gradiant  ">
-							See All Job
+						<button
+							className="btn btn-primary bg-gradiant  "
+							onClick={() => setToggle(!toggle)}
+						>
+							{toggle ? "See All" : "See Less"}
 						</button>
 					</div>
 				</div>
