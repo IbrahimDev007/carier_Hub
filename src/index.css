@@ -11,5 +11,10 @@
     .texts-gradiant{
         @apply bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent
     }
-
+ p{
+    @apply my-2
+ }
+ span{
+    @apply font-bold
+ }
 }
