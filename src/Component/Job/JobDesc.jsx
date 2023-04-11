@@ -4,7 +4,8 @@ import { addedjobLocal, getJobData } from "../../FakeDb/fakeDb";
 import Header from "../Header/Header";
 import Banner from "./Banner";
 import JobCart from "./JobCart";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const JobDesc = () => {
 	const Jobdata = useLoaderData();
 	const { id } = useParams();
@@ -25,7 +26,7 @@ const JobDesc = () => {
 		const handleData = getJobData();
 		const exist = id in handleData;
 		if (exist) {
-			alert("exist");
+			toast("Wow so easy!");
 		} else {
 			addedjobLocal(id);
 		}
@@ -63,6 +64,7 @@ const JobDesc = () => {
 					handleAddJob={handleAddJob}
 					id={id}
 				/>
+				<ToastContainer />
 			</div>
 		</div>
 	);
