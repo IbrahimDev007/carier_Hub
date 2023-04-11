@@ -4,12 +4,11 @@ import {
 	faAddressCard,
 	faCalendar,
 	faDollar,
-	faLocation,
 	faMailBulk,
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-const JobCart = ({ sa }) => {
+const JobCart = ({ salary, contact, location, title, id, handleAddJob }) => {
 	return (
 		<div className="mr-3">
 			<div className="bg-gray-300 p-2 rounded-md">
@@ -19,62 +18,64 @@ const JobCart = ({ sa }) => {
 				<hr />
 				{/* <p className="divide-x-4">lol</p> */}
 				<p>
-					<span>
-						{" "}
+					<span className="mr-2">
 						<FontAwesomeIcon className="text-violet-500 mx-1" icon={faDollar} />
 						Sallery:
 					</span>
-					lore
+					{salary}
 				</p>
 				<p>
-					<span>
+					<span className="mr-2">
 						<FontAwesomeIcon
 							className="text-violet-500 mx-1"
 							icon={faCalendar}
 						/>
 						JobTitle:
 					</span>
-					lore
+					{title}
 				</p>
 				<p className="my-3">
-					<span>Contact Information</span>
+					<span className="mr-2">Contact Information</span>
 				</p>
 				<hr />
 				{/* <p className="divide-y-8 divide-gray-500 divide-solid"></p> */}
 				<p>
 					<p>
-						<span>
+						<span className="mr-2">
 							<FontAwesomeIcon
 								className="text-violet-500 mx-1"
 								icon={faPhone}
 							/>
 							Phone:
 						</span>
-						lore
+						{contact.phone}
 					</p>
 					<p>
-						<span>
+						<span className="mr-2">
 							<FontAwesomeIcon
 								className="text-violet-500 mx-1"
 								icon={faMailBulk}
 							/>
 							Email:
 						</span>
-						lore
+						{contact.email}
 					</p>
 					<p>
-						<span>
+						<span className="mr-2">
 							<FontAwesomeIcon
 								className="text-violet-500 mx-1"
 								icon={faAddressCard}
 							/>
 							Adress:
 						</span>
-						lore
+						{location}
 					</p>
 				</p>
 			</div>
-			<button className="w-full btn btn-gradiant bg-gradiant my-4 btn-primary">
+			<button
+				className="w-full btn btn-gradiant bg-gradiant my-4 btn-primary"
+				onClick={() => handleAddJob(id)}
+			>
 				Apply Now
 			</button>
 		</div>

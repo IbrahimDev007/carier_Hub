@@ -1,5 +1,7 @@
 import React from "react";
 import { useLoaderData, useLocation, useParams } from "react-router-dom";
+import { addedjobLocal, getJobData } from "../../FakeDb/fakeDb";
+import Header from "../Header/Header";
 import Banner from "./Banner";
 import JobCart from "./JobCart";
 
@@ -19,8 +21,19 @@ const JobDesc = () => {
 		contact_information,
 		location,
 	} = job;
+	const handleAddJob = (id) => {
+		const handleData = getJobData();
+		const exist = id in handleData;
+		if (exist) {
+			alert("exist");
+		} else {
+			addedjobLocal(id);
+		}
+	};
+
 	return (
 		<div>
+			<Header />
 			<Banner>
 				<h2 className="text-2xl font-semibold">Job Details</h2>
 			</Banner>
@@ -47,6 +60,8 @@ const JobDesc = () => {
 					contact={contact_information}
 					location={location}
 					title={job_title}
+					handleAddJob={handleAddJob}
+					id={id}
 				/>
 			</div>
 		</div>
