@@ -18,7 +18,7 @@ const Home = () => {
 						need. Its your future
 					</p>
 				</div>
-				<div className="flex  flex-col justify-center items-center lg:px-10 lg:flex-row">
+				<div className="flex  flex-col justify-center items-center lg:px-10 gap-3 lg:flex-row">
 					{catagoryData.map((catagory, index) => (
 						<Jobcatagory key={index} catagory={catagory} />
 					))}
@@ -32,12 +32,15 @@ const Home = () => {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 lg:grid-cols-2 mt-8 justify-items-center items-center">
-						<FetureJob />
+						{jobData.map((job) => (
+							<FetureJob key={job.id} job={job} />
+						))}
 					</div>
-                    <div className="flex justify-center">
-                    <button className="btn btn-primary bg-gradiant  ">Watch</button>
-                    </div>
-                    
+					<div className="flex justify-center">
+						<button className="btn btn-primary bg-gradiant  ">
+							See All Job
+						</button>
+					</div>
 				</div>
 			</div>
 		</>
