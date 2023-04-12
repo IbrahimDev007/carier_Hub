@@ -15,3 +15,5 @@ b7a9-career-hub-IbrahimDev007 created by GitHub Classroom
 9.Blog for answer assignment bonus mark
 
 ## Netlify Deploy Website
+
+https://cozy-chaja-e67bf7.netlify.app/
