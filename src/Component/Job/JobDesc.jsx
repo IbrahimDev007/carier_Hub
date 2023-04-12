@@ -33,7 +33,6 @@ const JobDesc = () => {
 
 	return (
 		<div>
-			<Header />
 			<Banner>
 				<h2 className="text-2xl font-semibold">Job Details</h2>
 			</Banner>

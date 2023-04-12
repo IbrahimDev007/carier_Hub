@@ -47,12 +47,11 @@ const FetureJob = ({ job }) => {
 					sallery:{salary}
 				</p>
 				<div className="card-actions">
-					<button
-						className="btn btn-primary bg-gradiant "
-						onClick={() => navigate(`job/${id}`)}
-					>
-						View Details
-					</button>
+					<Link to={`/job/${id}`} state={job_title}>
+						<button className="btn btn-primary bg-gradiant ">
+							View Details
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

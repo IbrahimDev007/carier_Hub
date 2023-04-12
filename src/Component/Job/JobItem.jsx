@@ -48,11 +48,8 @@ const JobItem = ({ job }) => {
 					</p>
 				</div>
 				<div className="card-actions">
-					<Link to={`/job/${id}`}>
-						<button
-							className="btn btn-primary bg-gradiant "
-							// onClick={() => navigate(`job/${id}`)}
-						>
+					<Link to={`/job/${id}`} state={job_title}>
+						<button className="btn btn-primary bg-gradiant ">
 							View Details
 						</button>
 					</Link>
