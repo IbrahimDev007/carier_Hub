@@ -23,4 +23,4 @@ b7a9-career-hub-IbrahimDev007 created by GitHub Classroom
 
 ## Netlify Deploy Website
 
-https://cozy-chaja-e67bf7.netlify.app/
+https://professional-hub007.netlify.app/
