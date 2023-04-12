@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { getJobData } from "../../FakeDb/fakeDb";
 import Banner from "./Banner";
 import JobItem from "./JobItem";
 
 const AppliedJob = () => {
+	const [userData, setUserData] = useState(useLoaderData());
+	const [applyData, setApplyData] = useState([]);
+	useEffect(() => {
+		const jobArr = [];
+		const localJobdata = getJobData();
+		for (const key in localJobdata) {
+			const item = userData.find((job) => job.id === key);
+			jobArr.push(item);
+		}
+		console.log(jobArr);
+		setApplyData(jobArr);
+	}, [userData]);
+
 	return (
 		<div>
 			<Banner>
@@ -19,10 +34,11 @@ const AppliedJob = () => {
 						<option>Italian</option>
 					</select>
 				</div>
-                <div className="flex justify-center">
-                <JobItem/>
-                </div>
-                
+				<div className="flex items-center flex-col">
+					{userData.map((job) => (
+						<JobItem job={job} key={job.id} />
+					))}
+				</div>
 			</div>
 		</div>
 	);

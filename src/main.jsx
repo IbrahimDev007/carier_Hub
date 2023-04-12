@@ -8,6 +8,7 @@ import ErrorPage from "./Component/ErrorPage/ErrorPage";
 import customLoader from "./Loder/loader";
 import JobDesc from "./Component/Job/JobDesc";
 import AppliedJob from "./Component/Job/AppliedJob";
+import Statistic from "./Component/Statistic/statistic";
 
 const router = createBrowserRouter([
 	{
@@ -20,17 +21,22 @@ const router = createBrowserRouter([
 				element: <Home />,
 				loader: customLoader,
 			},
+			{
+				path: "/statistic",
+				element: <Statistic />,
+			},
 
 			{
 				path: "/appliedJob",
 				element: <AppliedJob />,
+				loader: () => fetch("/job.json"),
 			},
 		],
 	},
 	{
 		path: "/job/:id",
 		element: <JobDesc />,
-		loader: () => fetch("job.json"),
+		loader: () => fetch("/job.json"),
 	},
 ]);
 

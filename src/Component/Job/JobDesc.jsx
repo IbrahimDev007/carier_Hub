@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useLocation, useParams } from "react-router-dom";
 import { addedjobLocal, getJobData } from "../../FakeDb/fakeDb";
 import Header from "../Header/Header";
 import Banner from "./Banner";
 import JobCart from "./JobCart";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const JobDesc = () => {
 	const Jobdata = useLoaderData();
 	const { id } = useParams();
-	const loc = useLocation();
-	console.log(loc);
+
 	const job = Jobdata.find((job) => id === job.id);
 	const {
 		job_description,
@@ -64,7 +63,6 @@ const JobDesc = () => {
 					handleAddJob={handleAddJob}
 					id={id}
 				/>
-				<ToastContainer />
 			</div>
 		</div>
 	);
