@@ -9,6 +9,7 @@ import customLoader from "./Loder/loader";
 import JobDesc from "./Component/Job/JobDesc";
 import AppliedJob from "./Component/Job/AppliedJob";
 import Statistic from "./Component/Statistic/statistic";
+import Blog from "./Component/Blog/Blog";
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
 			{
 				path: "/statistic",
 				element: <Statistic />,
+			},
+			{
+				path: "/blog",
+				element: <Blog />,
 			},
 
 			{
